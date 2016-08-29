@@ -1,0 +1,65 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Scoping Reports</h3>
+        <ol class="breadcrumb">
+            <li>
+                <a href="/app/">
+                    <i class="fa fa-home"></i>
+                </a>
+            </li>
+            <li class="active">
+                Scoping Report List
+            </li>
+        </ol>
+    </div>
+
+    <div class="panel-body">
+        <table class="table table-responsive table-striped">
+            <thead>
+            <tr class="small">
+                <th class="col-sm-3">Scoping Reports</th>
+                <th class="col-sm-1 text-center">Status</th>
+                <th class="col-sm-1 text-center">Visit Date</th>
+                <th class="col-sm-1 text-center">Last Modified</th>
+                <th class="col-sm-1 text-center">Created</th>
+                <th class="col-sm-5"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each items}}
+                <tr>
+                    <td>
+                        <a href="#sites/{{site_id}}/scoping_reports/{{id}}">
+                            <i class="fa fa-pencil"></i>
+                            <small>edit report</small>
+                        </a>
+                        <div class="text-truncate">{{{notes}}}</div>
+                    </td>
+                    <td class="text-capitalize text-center">
+                        {{fmt_pdc_status_messages}}
+                    </td>
+                    <td class="text-center">
+                        {{fmt_visitdate}}
+                    </td>
+                    <td class="text-left small">
+                        <ul class="nav nav-list">
+                            <li>{{modified_by}}</li>
+                            <li>{{fmt_modified_dt}}</li>
+                        </ul>
+                    </td>
+                    <td class="text-left small">
+                        <ul class="nav nav-list">
+                            <li>{{created_by}}</li>
+                            <li>{{fmt_created_dt}}</li>
+                        </ul>
+                    </td>
+                    <td>{{{notes}}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

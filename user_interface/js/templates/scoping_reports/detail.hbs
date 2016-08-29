@@ -1,0 +1,191 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Edit Scoping Report</h3>
+        <ol class="breadcrumb">
+            <li>
+                <a href="/app/">
+                    <i class="fa fa-home"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#sites">
+                    Sites
+                </a>
+            </li>
+            <li>
+                <a href="#sites/{{site.id}}">
+                    Site {{site.sitename}}
+                </a>
+            </li>
+            <li>
+                <a href="#scoping_reports">
+                    Scoping Reports
+                </a>
+            </li>
+            <li class="active">
+                {{#if scoping_report.id}}
+                    Scoping Report {{scoping_report.id}}
+                {{else}}
+                    New Scoping Report
+                {{/if}}
+            </li>
+        </ol>
+    </div>
+
+    {{#with scoping_report}}
+        <div class="panel-body">
+            <form class="form form-scopingrpts">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="visitdate" class="control-label">Scoping Visit Date</label>
+                            <input type="date" class="form-control" id="visitdate"
+                                   data-required="true" value="{{visitdate}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label">Notes</label>
+                            <textarea class="form-control" rows="5" data-field="notes">{{notes}}</textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    {{/with}}
+
+
+    <div class="panel-heading">
+        <h4>
+            <a data-toggle="collapse" href="#pnl-compair-detail-collapse-measures-add-{{id}}">
+                Add Measure
+            </a>
+        </h4>
+    </div>
+
+    <div id="pnl-compair-detail-collapse-measures-add-{{id}}"
+         class="panel-body collapse scopingrpts-detail-add-measure">
+        <form class="form">
+            <div class="form-group">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span class="scopingrpts-detail-label-measure">Available Measures</span>
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        {{#each measure_types}}
+                            <li>
+                                <a href="#" onclick="return false;" data-code="{{code}}"
+                                   class="scopingrpts-detail-select-measure">{{title}}</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <input type="hidden" class="form-control" data-field="measure_type">
+            </div>
+            <div class="form-group">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span class="scopingrpts-detail-label-equipment">Associated Equipment</span>
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" data-field="associated_equipment">
+                        {{#each associated_equipment}}
+                            <li>
+                                <a href="#" onclick="return false;" data-code="{{code}}"
+                                   class="scopingrpts-detail-select-equipment">{{title}}</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <input type="hidden" class="form-control" data-field="associated_equipment">
+            </div>
+            <div class="form-group">
+                <label>Measure Notes</label>
+                <textarea data-field="measure_notes" class="form-control" rows="3"></textarea>
+            </div>
+        </form>
+        <div class="scopingrpts-detail-measure-fields">
+
+        </div>
+        <a href="#" onclick="return false;"
+           class="btn btn-default btn-sm btn-scopingrpts-detail-add-measure">
+            <i class="fa fa-plus"></i>
+            add measure
+        </a>
+    </div>
+
+    {{#if measures}}
+        <div class="panel-heading">
+            <h4>
+                <a data-toggle="collapse" href="#pnl-compair-detail-collapse-measures-{{id}}">Measures</a>
+            </h4>
+        </div>
+
+        <div id="pnl-compair-detail-collapse-measures-{{id}}" class="panel-body collapse in">
+            <table class="table table-responsive table-striped">
+                <thead>
+                <tr>
+                    <th class="col-sm-6">Recommended Measure</th>
+                    <th class="col-sm-2 text-center">Power Usage (kW)</th>
+                    <th class="col-sm-2 text-center">Energy Savings (kWh)</th>
+                    <th class="col-sm-2 text-center">Cost Savings ($)</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each measures}}
+                    <tr>
+                        <td>
+                            {{fmt_measure_type}}
+                            <p class="small">{{measure_notes}}</p>
+                        </td>
+                        <td class="text-right">{{power_usage}}</td>
+                        <td class="text-right">{{energy_savings}}</td>
+                        <td class="text-right">{{cost_savings}}</td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    {{/if}}
+
+    {{#with measure_totals}}
+        <table class="table table-responsive table-condensed">
+            <tfoot>
+            <tr>
+                <td class="text-right col-sm-6">
+                    <strong>Total Power of Affected System</strong>
+                </td>
+                <td class="text-right col-sm-1">
+                    {{power_usage}}
+                </td>
+                <td class="text-left col-sm-5">
+                    kW
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right col-sm-6">
+                    <strong>Annual Energy Savings</strong>
+                </td>
+                <td class="text-right col-sm-1">
+                    {{energy_savings}}
+                </td>
+                <td class="text-left col-sm-5">
+                    kWh
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right col-sm-6">
+                    <strong>Cost Savings</strong>
+                </td>
+                <td class="text-right col-sm-1">
+                    {{cost_savings}}
+                </td>
+                <td class="text-left col-sm-5"></td>
+            </tr>
+            </tfoot>
+        </table>
+    {{/with}}
+</div>

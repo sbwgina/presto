@@ -1,0 +1,432 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Edit Site Information</h3>
+        <ol class="breadcrumb">
+            <li>
+                <a href="/app/">
+                    <i class="fa fa-home"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#sites">
+                    Site List
+                </a>
+            </li>
+            <li class="active">
+                {{#if sitename}}Site {{sitename}}{{else}}Untitled Site{{/if}}
+            </li>
+        </ol>
+    </div>
+
+    <div class="panel-heading">
+        <h4>
+            <a data-toggle="collapse" href="#pnl-sites-detail-contacts-{{id}}">
+                <i class="fa fa-angle-down"></i>
+                Contact Information
+            </a>
+        </h4>
+    </div>
+
+    <div class="panel-body collapse" id="pnl-sites-detail-contacts-{{id}}">
+        <form class="form">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>Location</h4>
+                    <div class="form-group">
+                        <label for="sitename" class="control-label">Site Name</label>
+                        <input type="text" class="form-control" id="sitename" value="{{sitename}}"
+                               data-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="siteaddress" class="control-label">Address</label>
+                        <input type="text" class="form-control" id="siteaddress" value="{{siteaddress}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="sitecity" class="control-label">City</label>
+                        <input type="text" class="form-control" id="sitecity" value="{{sitecity}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="sitestate" class="control-label">State</label>
+                        <input type="text" class="form-control" id="sitestate" value="{{sitestate}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="sitezip" class="control-label">Zip</label>
+                        <input type="text" class="form-control" id="sitezip" value="{{sitezip}}">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Site Contact</h4>
+                    <div class="form-group">
+                        <label for="sitecontact1" class="control-label">Contact</label>
+                        <input type="text" class="form-control" id="sitecontact1" value="{{sitecontact1}}"
+                               data-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="sitecontacttitle1" class="control-label">Contact Title</label>
+                        <input type="text" class="form-control" id="sitecontacttitle1" value="{{sitecontacttitle1}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactphone1" class="control-label">Phone</label>
+                        <input type="tel" class="form-control" id="contactphone1" value="{{contactphone1}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactemail1" class="control-label">Email</label>
+                        <input type="email" class="form-control" id="contactemail1" value="{{contactemail1}}">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Alternate Contact</h4>
+                    <div class="form-group">
+                        <label for="sitecontact2" class="control-label">Alt Contact</label>
+                        <input type="text" class="form-control" id="sitecontact2" value="{{sitecontact2}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="sitecontacttitle2" class="control-label">Contact Title</label>
+                        <input type="text" class="form-control" id="sitecontacttitle2" value="{{sitecontacttitle2}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactphone2" class="control-label">Phone</label>
+                        <input type="tel" class="form-control" id="contactphone2" value="{{contactphone2}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactemail2" class="control-label">Email</label>
+                        <input type="email" class="form-control" id="contactemail2" value="{{contactemail2}}">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="panel-heading">
+        <h4>
+            <a data-toggle="collapse" href="#pnl-sites-detail-etoinfo-{{id}}">
+                <i class="fa fa-angle-down"></i>
+                ETO Information
+            </a>
+        </h4>
+    </div>
+
+    <div class="panel-body collapse" id="pnl-sites-detail-etoinfo-{{id}}">
+        <form class="form">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="etocontact" class="control-label">ETO Contact</label>
+                        <input type="text" class="form-control" id="etocontact" value="{{etocontact}}"
+                               data-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="etophone" class="control-label">Phone</label>
+                        <input type="tel" class="form-control" id="etophone" value="{{etophone}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="etoemail" class="control-label">Email</label>
+                        <input type="email" class="form-control" id="etoemail" value="{{etoemail}}">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="electricratesch" class="control-label">Electric Rate Schedule</label>
+                        <input type="number" class="form-control" id="electricratesch" value="{{electricratesch}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="gasratesch" class="control-label">Gas Rate Schedule</label>
+                        <input type="number" class="form-control" id="gasratesch" value="{{gasratesch}}">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="panel-heading">
+        <h4>
+            <a data-toggle="collapse" href="#pnl-sites-detail-systems-{{id}}">
+                <i class="fa fa-angle-down"></i>
+                Systems
+            </a>
+        </h4>
+    </div>
+    <div class="panel-body collapse" id="pnl-sites-detail-systems-{{id}}">
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#compair">Compressed Air</a></li>
+                <li><a data-toggle="tab" href="#hvac">HVAC</a></li>
+                <li><a data-toggle="tab" href="#lighting">Lighting</a></li>
+                <li><a data-toggle="tab" href="#refrig">Refrigeration</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="compair" class="tab-pane fade in active">
+                    <div class="panel-body">
+                        <h4>Installed Compressed Air system</h4>
+                        <div class="form-group">
+                            <label for="compsys" class="control-label">Pick a Compressed Air System</label>
+                            <select class="form-control" id="compsys">
+                                {{#if compsys}}
+                                    <option selected="selected">{{compsys}}</option>
+                                {{else}}
+                                    <option selected="selected">none selected...</option>
+                                {{/if}}
+                                <option>System 1</option>
+                                <option>System 2</option>
+                                <option>Add New</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="compsysname" class="control-label">Compressor System Name</label>
+                            <input type="text" class="form-control" id="compsysname"
+                                   value="{{compsysname}}">
+                        </div>
+                        <div class="panel-group" id="pnl-compair-detail-accordion-{{id}}">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#pnl-compair-detail-accordion-{{id}}"
+                                           href="#pnl-compair-detail-collapse-compressor-{{id}}">
+                                            Compressor
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="pnl-compair-detail-collapse-compressor-{{id}}"
+                                     class="panel-body panel-collapse collapse">
+                                    <h4>Compressor</h4>
+                                    <div class="form-group">
+                                        <label for="compid" class="control-label">Pick a Compressor ID</label>
+                                        <select class="form-control" id="compid">
+                                            {{#if compid}}
+                                                <option selected="selected">{{compid}}</option>
+                                            {{else}}
+                                                <option selected="selected">none selected...</option>
+                                            {{/if}}
+                                            <option>Compressor 1</option>
+                                            <option>Compressor 2</option>
+                                            <option>Add New</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="compid" class="control-label">Compressor ID</label>
+                                        <input type="text" class="form-control" id="compid"
+                                               value="{{compid}}">
+                                    </div>
+                                    <div>
+                                        <div class="btn-group btn-group-md">
+                                            <button type="button" class="btn btn-primary active" id="btnscrew">Screw
+                                            </button>
+                                            <button type="button" class="btn btn-primary" id="btnrecip">Reciprocating
+                                            </button>
+                                            <button type="button" class="btn btn-primary" id="bntcentf">Centrifugal
+                                            </button>
+                                            <button type="button" class="btn btn-primary" id="bntother">Other</button>
+                                        </div>
+                                        <div>
+                                        </div>
+                                    </div>
+                                    <form class="form">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="compmanufacturer"
+                                                           class="control-label">Manufacturer</label>
+                                                    <input type="text" class="form-control" id="compmanufacturer"
+                                                           value="{{compmanufacturer}}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="compmodel" class="control-label">Model</label>
+                                                    <input type="text" class="form-control" id="compmodel"
+                                                           value="{{compmodel}}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="size" class="control-label">Size</label>
+                                                    <input type="number" class="form-control" id="size"
+                                                           value="{{size}}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="sizeunits" class="control-label">Units</label>
+                                                    <select class="form-control" id="sizeunits">
+                                                        {{#if sizeunits}}
+                                                            <option selected="selected">{{sizeunits}}</option>
+                                                        {{else}}
+                                                            <option selected="selected">none selected...</option>
+                                                        {{/if}}
+                                                        <option>HP</option>
+                                                        <option>kW</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="ophrs" class="control-label">Operating Hours</label>
+                                                    <input type="number" class="form-control" id="ophrs"
+                                                           value="{{ophrs}}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="plcontrol" class="control-label">Part Load
+                                                        Control</label>
+                                                    <select class="form-control" id="plcontrol">
+                                                        {{#if plcontrol}}
+                                                            <option selected="selected">{{plcontrol}}</option>
+                                                        {{else}}
+                                                            <option selected="selected">none selected...</option>
+                                                        {{/if}}
+                                                        <option>Load/Unload</option>
+                                                        <option>VFD</option>
+                                                        <option>Modulating</option>
+                                                        <option>Other</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="ctrlsettings" class="control-label">Control
+                                                        Settings</label>
+                                                    <input type="text" class="form-control" id="ctrlsettings"
+                                                           value="{{ctrlsettings}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="compnotes" class="control-label">Notes</label>
+                                                    <textarea class="form-control" rows="5"
+                                                              id="compnotes">{{compnotes}}</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse"
+                                       data-parent="#pnl-compair-detail-accordion-{{id}}"
+                                       href="#pnl-compair-detail-collapse-dryer-{{id}}">
+                                        Dryer
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="pnl-compair-detail-collapse-dryer-{{id}}"
+                                 class="panel-body panel-collapse collapse">
+                                <form class="form">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="drymanufacturer" class="control-label">Manufacturer</label>
+                                                <input type="text" class="form-control" id="drymanufacturer"
+                                                       value="{{drymanufacturer}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="drymodel" class="control-label">Model</label>
+                                                <input type="text" class="form-control" id="drymodel"
+                                                       value="{{drymodel}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="drytype" class="control-label">Dryer Type</label>
+                                                <select class="form-control" id="drytype">
+                                                    {{#if drytype}}
+                                                        <option selected="selected">{{drytype}}</option>
+                                                    {{else}}
+                                                        <option selected="selected">none selected...</option>
+                                                    {{/if}}
+                                                    <option>Refrigerated</option>
+                                                    <option>Regen Desiccant-Heatless</option>
+                                                    <option>Regen Desiccant-Heated</option>
+                                                    <option>Regen Desiccant-Heat of Compression</option>
+                                                    <option>Single Tower</option>
+                                                    <option>Membrane</option>
+                                                    <option>Other</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="dryctrl" class="control-label">Dryer Control</label>
+                                                <select class="form-control" id="dryctrl">
+                                                    {{#if dryctrl}}
+                                                        <option selected="selected">{{dryctrl}}</option>
+                                                    {{else}}
+                                                        <option selected="selected">none selected...</option>
+                                                    {{/if}}
+                                                    <option>Cycling</option>
+                                                    <option>Non-Cycling</option>
+                                                    <option>Dew Point</option>
+                                                    <option>Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="drynotes" class="control-label">Notes</label>
+                                                <textarea class="form-control" rows="5"
+                                                          id="drynotes">{{drynotes}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse"
+                                       data-parent="#pnl-compair-detail-accordion-{{id}}"
+                                       href="#pnl-compair-detail-collapse-receiver-{{id}}">
+                                        Receiver
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="pnl-compair-detail-collapse-receiver-{{id}}"
+                                 class="panel-body panel-collapse collapse">
+                                <form class="form">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="rcvrsize" class="control-label">Size (gallons)</label>
+                                                <input type="number" class="form-control" id="rcvrsize"
+                                                       value="{{rcvrsize}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="rcvrloc" class="control-label">Location</label>
+                                                <select class="form-control" id="rcvrloc">
+                                                    {{#if rcvrloc}}
+                                                        <option selected="selected">{{rcvrloc}}</option>
+                                                    {{else}}
+                                                        <option selected="selected">none selected...</option>
+                                                    {{/if}}
+                                                    <option>Wet</option>
+                                                    <option>Dry</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="rcvrpressure" class="control-label">Pressure (psig)</label>
+                                                <input type="number" class="form-control" id="rcvrpressure"
+                                                       value="{{rcvrpressure}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="rcvrnotes" class="control-label">Notes</label>
+                                                <textarea class="form-control" rows="5"
+                                                          id="rcvrnotes">{{rcvrnotes}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="hvac" class="tab-pane fade">
+                    <h3>HVAC Inputs</h3>
+                    <p>All kinds of HVAC stuff here</p>
+                </div>
+                <div id="lighting" class="tab-pane fade">
+                    <h3>Lighting Inputs</h3>
+                    <p>Lighting system details here</p>
+                </div>
+                <div id="refrig" class="tab-pane fade">
+                    <h3>Refrigeration Inputs</h3>
+                    <p>As much refrigeration data as you can handle.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

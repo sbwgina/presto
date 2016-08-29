@@ -1,0 +1,61 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Site List
+            <small>(PDC User)</small>
+        </h3>
+        <ol class="breadcrumb">
+            <li>
+                <a href="/app/">
+                    <i class="fa fa-home"></i>
+                </a>
+            </li>
+            <li class="active">
+                Site List
+            </li>
+            <li>
+                <a href="#sites/create">
+                    <i class="fa fa-plus"></i>
+                    New Site
+                </a>
+            </li>
+        </ol>
+    </div>
+</div>
+{{#each items}}
+    <div class="panel panel-default sites-pdc-site-item" data-itemid="{{id}}">
+        <div class="panel-heading">
+            <h4>
+                <a href="#sites/{{id}}">
+                    <i class="fa fa-location-arrow fa-rotate-90"></i>
+                    {{#if sitename}}{{sitename}}{{else}}Untitled{{/if}}
+                </a>
+            </h4>
+            <div class="btn btn-group btn-group-sm">
+                <a href="#sites/{{id}}" class="btn btn-default">
+                    <i class="fa fa-pencil"></i>
+                    edit
+                </a>
+            </div>
+            <div class="btn btn-group btn-group-sm">
+                <a class="btn btn-default sites-pdc-listing-report-list" href="#" onclick="return false;">
+                    <i class="fa fa-folder"></i>
+                    Scoping Reports
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <a class="btn btn-default" href="#sites/{{id}}/scoping_reports/create">
+                    <i class="fa fa-plus"></i>
+                    New Scoping Report
+                </a>
+            </div>
+        </div>
+
+        <table class="table table-bordered">
+            <tbody class="sites-pdc-listing-report-container">
+            </tbody>
+        </table>
+    </div>
+{{/each}}
+
+
+
+

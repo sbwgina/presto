@@ -1,0 +1,48 @@
+<div class="panel">
+    <div class="panel-heading">
+        <h2>Site List</h2>
+        <p>Pick the site you want to work with. clicking should bring up site data entry form</p>
+    </div>
+    <div class="panel-body table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Site Name</th>
+                <th>PDC Name</th>
+                <th>Visit Date</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each items}}
+                <tr>
+                    <td>
+                        <a href="#sites/{{id}}">
+                            <i class="fa fa-folder"></i>
+                            {{#if sitename}}
+                                {{sitename}}
+                                <small>{{site_number}}</small>
+                            {{else}}
+                                Site {{site_number}}
+                            {{/if}}
+                        </a>
+                    </td>
+                    <td>
+                        {{#if pdc_number}}
+                            PDC {{pdc_number}}
+                        {{else}}
+                            <small>unassigned</small>
+                        {{/if}}
+                    </td>
+                    <td>{{fmt_pdc_relevant_date}}</td>
+                    <td>{{fmt_pdc_status_messages}} {{fmt_pdc_completed_date}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,38 @@
+{
+  "name": "presto-demo-ws",
+  "version": "0.0.1",
+  "private": true,
+  "description": "PRESTO | DEMO | Web Application",
+  "bugs": {
+    "email": "hrovira.presto@gmail.com",
+    "url": "https://bitbucket.org/hrovira_presto/presto_demo/issues/new"
+  },
+  "license": "closed-privately-owned-copyrighted-and-allrightsreserved",
+  "contributors": [
+    {
+      "name": "Hector Rovira",
+      "email": "hrovira.presto@gmail.com",
+      "url": "http://github.com/hrovira",
+      "company": "Self-Employed Independent Contractor",
+      "roles": [
+        "Software Architect",
+        "Web Application Developer"
+      ]
+    }
+  ],
+  "scripts": {
+    "start": "nodejs server.js"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "body-parser": "^1.15.0",
+    "connect-cache-manifest": "^0.2.2",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "mongodb": "^2.1.10",
+    "nconf": "^0.8.4",
+    "string": "^3.3.1",
+    "underscore": "^1.8.3",
+    "winston": "^2.2.0"
+  }
+}

@@ -1,0 +1,74 @@
+<div class="panel">
+    <div class="panel-body">
+        <form class="form">
+            <div class="form-group">
+                <label class="control-label">
+                    Enter a username
+                </label>
+                <div class="input-group">
+                    <input type="text"
+                           class="form-control presto-required-field presto-user-login"
+                           data-field="chosen_name"
+                           placeholder="e.g. Jane Doe, jdoe"/>
+                </div>
+                <div class="form-validation hide">
+                    <label>You must enter a username</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">
+                    Email address
+                </label>
+                <div class="input-group">
+                    <input type="email"
+                           class="form-control presto-required-field"
+                           data-field="email_address"
+                           placeholder="e.g. jdoe@example.com"/>
+                </div>
+
+                <div class="form-validation hide">
+                    <label>You must enter an email address</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">
+                    Selected Role
+                </label>
+
+                <div class="radio">
+                    <label>
+                        <input type="radio"
+                               name="selected_role"
+                               class="presto-required-field"
+                               data-field="roles" value="admin">
+                        Administrator
+                    </label>
+                </div>
+
+                <div class="radio">
+                    <label>
+                        <input type="radio"
+                               name="selected_role"
+                               class="presto-required-field"
+                               data-field="roles" value="pdc_user">
+                        PDC User
+                    </label>
+                </div>
+
+                <div class="form-validation hide">
+                    <label>You must select a role</label>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default btn-sm btn-id-presented">
+                    <i class="fa fa-sign-in"></i>
+                    <span>Log In</span>
+                </button>
+                <button type="button" class="btn btn-default btn-sm btn-id-create-user">
+                    <i class="fa fa-user"></i>
+                    <span>Create User</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+{
+  "name": "presto-demo-ui",
+  "version": "0.0.1",
+  "private": true,
+  "description": "PRESTO | DEMO | Web Application",
+  "bugs": {
+    "email": "hrovira.presto@gmail.com",
+    "url": "https://bitbucket.org/hrovira_presto/presto_demo/issues/new"
+  },
+  "license": "closed-privately-owned-copyrighted-and-allrightsreserved",
+  "contributors": [
+    {
+      "name": "Hector Rovira",
+      "email": "hrovira.presto@gmail.com",
+      "url": "http://github.com/hrovira",
+      "company": "Self-Employed Independent Contractor",
+      "roles": [
+        "Software Architect",
+        "Web Application Developer"
+      ]
+    }
+  ],
+  "scripts": {
+    "install": "bower install"
+  },
+  "dependencies": {
+    "bower": "^1.7.7",
+    "handlebars": "^4.0.5",
+    "requirejs": "^2.2.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-handlebars": "^1.0.0",
+    "grunt-contrib-requirejs": "^1.0.0"
+  }
+}

@@ -1,0 +1,45 @@
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Manage Users</h3>
+        <ol class="breadcrumb">
+            <li>
+                <a href="/app/">
+                    <i class="fa fa-home"></i>
+                </a>
+            </li>
+            <li class="active">User List</li>
+        </ol>
+    </div>
+    <div class="panel-body">
+        <table class="table table-responsive table-striped">
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Last Logged In</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each items}}
+                <tr>
+                    <td>{{chosen_name}}</td>
+                    <td>{{email_address}}</td>
+                    <td>
+                        {{#if roles}}
+                            <ul class="nav nav-list">
+                                {{#each roles}}
+                                    <li>{{.}}</li>
+                                {{/each}}
+                            </ul>
+                        {{else}}
+                            none selected
+                        {{/if}}
+                    </td>
+                    <td>{{fmt_last_logged_in}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
